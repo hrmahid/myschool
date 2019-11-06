@@ -17,9 +17,9 @@
 					</div>
 					<div class="card-body">
 						<form action="" method="POST">
-							<label >E-mail</label>
+							<label>E-mail</label>
 							<input type="email" class="form-control" name="email" />
-							<label >Password</label>
+							<label>Password</label>
 							<input type="password" class="form-control" name="password" />
 							<button class="btn btn-primary mt-2" type="submit" name="login">Login</button>
 						</form>

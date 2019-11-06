@@ -42,7 +42,32 @@
         </div>
       </li>
 	  
-	  
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#student" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Students</span>
+        </a>
+        <div id="student" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Student</h6>
+            <a class="collapse-item" href="add_student.php">Add Student</a>
+            <a class="collapse-item" href="all_student.php">All Student</a>
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#routine" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Routine</span>
+        </a>
+        <div id="routine" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Routine</h6>
+            <a class="collapse-item" href="add_routine.php">Add Routine</a>
+            <a class="collapse-item" href="all_routine.php">All Routine</a>
+          </div>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
