@@ -68,6 +68,19 @@
           </div>
         </div>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#result" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Results</span>
+        </a>
+        <div id="result" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Results</h6>
+            <a class="collapse-item" href="add_result.php">Add Result</a>
+            <a class="collapse-item" href="all_result.php">All Result</a>
+          </div>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2019 at 07:00 AM
+-- Generation Time: Nov 13, 2019 at 07:24 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -42,6 +42,30 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_phone`, `admin_password`) VALUES
 (1, 'Admin', 'admin@gmail.com', '01845635308', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `main_results`
+--
+
+CREATE TABLE `main_results` (
+  `result_id` int(11) NOT NULL,
+  `student_id` int(255) NOT NULL,
+  `class_id` int(2) NOT NULL,
+  `rollno` int(15) NOT NULL,
+  `pub_date` varchar(255) NOT NULL,
+  `pub_year` int(255) NOT NULL,
+  `gpa` varchar(225) NOT NULL,
+  `total_grade` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `main_results`
+--
+
+INSERT INTO `main_results` (`result_id`, `student_id`, `class_id`, `rollno`, `pub_date`, `pub_year`, `gpa`, `total_grade`) VALUES
+(1, 2, 1, 2020, '13/11/2019', 2019, '0', '');
 
 -- --------------------------------------------------------
 
@@ -95,6 +119,30 @@ INSERT INTO `students` (`student_id`, `std_name`, `f_name`, `m_name`, `dob`, `ad
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subject_results`
+--
+
+CREATE TABLE `subject_results` (
+  `swres_id` int(11) NOT NULL,
+  `result_id` int(255) NOT NULL,
+  `subject_name` varchar(255) NOT NULL,
+  `subject_grade` varchar(255) NOT NULL,
+  `subject_gpa` float NOT NULL,
+  `subject_marks` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subject_results`
+--
+
+INSERT INTO `subject_results` (`swres_id`, `result_id`, `subject_name`, `subject_grade`, `subject_gpa`, `subject_marks`) VALUES
+(1, 1, 'Bangla', '', 0, 80),
+(2, 1, 'English', '', 0, 70),
+(3, 1, 'Math', '', 0, 40);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `s_class`
 --
 
@@ -114,7 +162,8 @@ INSERT INTO `s_class` (`class_id`, `class_name`, `active_status`) VALUES
 (3, 'THREE', 1),
 (4, 'FOUR', 1),
 (5, 'FIVE', 1),
-(6, 'SIX', 1);
+(6, 'SIX', 1),
+(7, 'Seven', 1);
 
 --
 -- Indexes for dumped tables
@@ -127,6 +176,12 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `main_results`
+--
+ALTER TABLE `main_results`
+  ADD PRIMARY KEY (`result_id`);
+
+--
 -- Indexes for table `routines`
 --
 ALTER TABLE `routines`
@@ -137,6 +192,12 @@ ALTER TABLE `routines`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`student_id`);
+
+--
+-- Indexes for table `subject_results`
+--
+ALTER TABLE `subject_results`
+  ADD PRIMARY KEY (`swres_id`);
 
 --
 -- Indexes for table `s_class`
@@ -155,6 +216,12 @@ ALTER TABLE `admins`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `main_results`
+--
+ALTER TABLE `main_results`
+  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `routines`
 --
 ALTER TABLE `routines`
@@ -167,10 +234,16 @@ ALTER TABLE `students`
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `subject_results`
+--
+ALTER TABLE `subject_results`
+  MODIFY `swres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `s_class`
 --
 ALTER TABLE `s_class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
