@@ -189,29 +189,23 @@
 							
 							//function for calculate gpa
 							function gpa_calculate($mark){
-								if($mark > 80){
-									echo 5.00;
+								if($mark >= 80){
+									return 5.00;
 								}
-								else if($mark > 75){
-									echo 4.50;
+								else if($mark >= 70){
+									return 4.00;
 								}
-								else if($mark > 70){
-									echo 4.00;
+								else if($mark >= 60){
+									return 3.00;
 								}
-								else if($mark > 65){
-									echo 3.50;
+								else if($mark >= 40){
+									return 2.00;
 								}
-								else if($mark > 60){
-									echo 3.00;
-								}
-								else if($mark > 50){
-									echo 2.00;
-								}
-								else if($mark > 33){
-									echo 1.00;
+								else if($mark >= 33){
+									return 1.00;
 								}
 								else{
-									echo 0.00;
+									return 0.00;
 								}
 							}
 							
@@ -219,29 +213,23 @@
 							
 							//function for calculate gpa
 							function grade_calculate($mark){
-								if($mark > 80){
-									echo "A+";
+								if($mark >= 80){
+									return "A+";
 								}
-								else if($mark > 75){
-									echo "A+";
+								else if($mark >= 70){
+									return "A";
 								}
-								else if($mark > 70){
-									echo "A";
+								else if($mark >= 60){
+									return "B";
 								}
-								else if($mark > 65){
-									echo "A-";
+								else if($mark >= 40){
+									return "C";
 								}
-								else if($mark > 60){
-									echo "B";
-								}
-								else if($mark > 50){
-									echo "C";
-								}
-								else if($mark > 33){
-									echo "D";
+								else if($mark >= 33){
+									return "D";
 								}
 								else{
-									echo "F";
+									return "F";
 								}
 							}
 							
@@ -249,43 +237,37 @@
 							
 							//function for calculate gpa
 							function total_grade($mark){
-								if($mark > 80){
-									echo "A+";
+								if($mark >= 4.99){
+									return "A+";
 								}
-								else if($mark > 75){
-									echo "A+";
+								else if($mark >= 3.99){
+									return "A";
 								}
-								else if($mark > 70){
-									echo "A";
+								else if($mark >= 2.99){
+									return "A-";
 								}
-								else if($mark > 65){
-									echo "A-";
+								else if($mark >= 1.99){
+									return "B";
 								}
-								else if($mark > 60){
-									echo "B";
-								}
-								else if($mark > 50){
-									echo "C";
-								}
-								else if($mark > 33){
-									echo "D";
+								else if($mark >= 0.99){
+									return "C";
 								}
 								else{
-									echo "F";
+									return "F";
 								}
 							}
 							
 							//end function 
 							
-							$sub1_gpa = gpa_calculate($mark1);
-							$sub2_gpa = gpa_calculate($mark2);
-							$sub3_gpa = gpa_calculate($mark3);
+							$sub1_gpa = number_format(gpa_calculate($mark1),2);
+							$sub2_gpa = number_format(gpa_calculate($mark2),2);
+							$sub3_gpa = number_format(gpa_calculate($mark3),2);
 							
 							$sub1_grade = grade_calculate($mark1);
 							$sub2_grade = grade_calculate($mark2);
 							$sub3_grade = grade_calculate($mark3);
 							
-							$total_gpa = ($sub1_gpa+$sub2_gpa+$sub3_gpa) / 3;
+							$total_gpa = number_format(($sub1_gpa+$sub2_gpa+$sub3_gpa) / 3, 2);
 							
 							$total_grade = total_grade($total_gpa);
 							
@@ -310,7 +292,7 @@
 							
 							$run3 = mysqli_query($con,$sql3);
 							
-							header('location:index.php');
+							echo "<script>window.open('index.php','_self');</script>";
 							
 							
 							
