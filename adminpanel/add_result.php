@@ -211,7 +211,7 @@
 							
 							//end function 
 							
-							//function for calculate gpa
+							//function for calculate grade
 							function grade_calculate($mark){
 								if($mark >= 80){
 									return "A+";
@@ -235,7 +235,7 @@
 							
 							//end function 
 							
-							//function for calculate gpa
+							//function for calculate total grade
 							function total_grade($mark){
 								if($mark >= 4.99){
 									return "A+";
